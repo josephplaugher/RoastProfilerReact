@@ -1,0 +1,37 @@
+{
+  "name": "roastprofiler",
+  "version": "1.0.0",
+  "description": "an app to get serial data from arduino and graph a coffee roast profile",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run build\" \"npm run start-server\"",
+    "build": "webpack --config webpack.js --watch",
+    "start-server": "NODE_ENV=development nodemon src/server/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "canvasjs-react-charts": "^1.0.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "serialport": "^9.0.7",
+    "socket.io": "^3.1.2",
+    "socket.io-client": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  }
+}
