@@ -3,6 +3,7 @@ import BatchSetup from './BatchSetup'
 import RoastControls from './RoastControls'
 import RoastMonitor from './RoastMonitor'
 import Chart from './Chart'
+
 class App extends React.Component {
     constructor(props) {
         super(props)
