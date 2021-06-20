@@ -4,17 +4,9 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 import InitialChartData from './InitialChartData'
 import { io, Socket } from "socket.io-client"
 
-class Chart extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            InitialChartData: InitialChartData
-        }
-        this.updateChart = this.updateChart.bind(this)
-        this.updateChart()
-    }
+const Chart = () => {
 
-    updateChart = () => {
+    const updateChart = () => {
         Socket.on('count', (newVal) => {
             s++//add 1 second to timer
             rorTimer++//add one second to rorTimer
@@ -59,21 +51,20 @@ class Chart extends React.Component {
         });
     }
 
-    render() {
 
-        const options = {
-            animationEnabled: true,
-            theme: "light2",
-            axisY: { interval: 50, maximum: 550, title: "Bean Temp" },
-            axisY2: { interval: 1, minimum: -1, maximum: 2, title: "Rate of Rise" },
-            axisX: { intervalType: "seconds", interval: 30, minimum: 0, maximum: 720, title: "Time (Seconds)" },
-            data: this.state.InitialChartData
-        }
-
-        return (
-            <CanvasJSChart options={options} ></CanvasJSChart>
-        )
+    const options = {
+        animationEnabled: true,
+        theme: "light2",
+        axisY: { interval: 50, maximum: 550, title: "Bean Temp" },
+        axisY2: { interval: 1, minimum: -1, maximum: 2, title: "Rate of Rise" },
+        axisX: { intervalType: "seconds", interval: 30, minimum: 0, maximum: 720, title: "Time (Seconds)" },
+        data: InitialChartData
     }
+
+    return (
+        <CanvasJSChart options={options} ></CanvasJSChart>
+    )
+
 }
 
 export default Chart
