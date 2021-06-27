@@ -1,5 +1,5 @@
 {
-  "name": "roastprofiler",
+  "name": "roastprofilerreact",
   "version": "1.0.0",
   "description": "an app to get serial data from arduino and graph a coffee roast profile",
   "main": "index.js",
